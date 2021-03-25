@@ -1,0 +1,39 @@
+snippet pub
+	public function ${1}(${2}): ${3}
+	{
+		${4}
+	}
+snippet priv
+	private function ${1}(${2}): ${3}
+	{
+		${4}
+	}
+snippet get
+	public function get${1}(): ${2}
+	{
+		return $this->${3};
+	}
+snippet __const
+	public funcition __construct(${1})
+	{
+		${2}
+	}
+snippet vo
+	class ${1}
+	{
+		private ${2:type} $${3:var};
+
+		public function __construct($2 $$3)
+		{
+			$this->$3 = $$3;
+		}
+
+		public function value(): $2
+		{
+			return $this->$3;
+		}
+	}
+snippet forkv
+	foreach ($${1} as $${2} => $${3}) {
+		${4}
+	}
