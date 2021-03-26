@@ -21,11 +21,11 @@ snippet __const
 snippet vo
 	class ${1}
 	{
-		private ${2:type} $${3:var};
+		private ${2:type} \$${3:var};
 
-		public function __construct($2 $$3)
+		public function __construct($2 \$$3)
 		{
-			$this->$3 = $$3;
+			$this->$3 = \$$3;
 		}
 
 		public function value(): $2
@@ -34,6 +34,6 @@ snippet vo
 		}
 	}
 snippet forkv
-	foreach ($${1} as $${2} => $${3}) {
+	foreach (\$${1} as \$${2} => \$${3}) {
 		${4}
 	}
