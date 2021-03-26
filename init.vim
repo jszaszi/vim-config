@@ -10,6 +10,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
 " Snippets
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -35,6 +39,8 @@ set backspace=indent,eol,start
 set visualbell
 set noerrorbells
 
+set autoread
+
 set showcmd
 set wildmenu
 set wildoptions=
@@ -57,6 +63,9 @@ set textwidth=0
 
 set nobackup
 set nowritebackup
+
+" Faster git-gutter signs update
+set updatetime=500
 
 set nolist
 hi ExtraWhitespace ctermbg=darkred  guibg=darkred
@@ -83,6 +92,12 @@ hi FoldColumn guibg=bg
 hi VertSplit guifg=bg guibg=#303030
 hi StatusLine guifg=#4C566A guibg=#dadada
 hi StatusLineNC guifg=#3B4252 guibg=#4C566A
+
+" Git-gutter tweaks
+hi SignColumn guibg=bg
+hi GitGutterAdd guibg=bg guifg=lightgreen
+hi GitGutterDelete guibg=bg guifg=red
+hi GitGutterChange guibg=bg guifg=orange
 "-----------------------------------------------------------------------------
 
 
