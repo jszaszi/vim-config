@@ -1,12 +1,13 @@
 "-- Plugins ------------------------------------------------------------------
 call plug#begin(stdpath('data') . '/plugged')
 
+" Colors
 Plug 'arcticicestudio/nord-vim'
 Plug 'gosukiwi/vim-atom-dark'
+
+" Navigation
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-vinegar'
-Plug 'preservim/nerdcommenter'
-Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
@@ -18,6 +19,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
+
+" Utils
+Plug 'preservim/nerdcommenter'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 "-----------------------------------------------------------------------------
@@ -90,6 +95,8 @@ augroup END
 hi LineNr guibg=bg
 hi FoldColumn guibg=bg
 hi VertSplit guifg=bg guibg=#303030
+
+" Airline tweaks
 hi StatusLine guifg=#4C566A guibg=#dadada
 hi StatusLineNC guifg=#3B4252 guibg=#4C566A
 
@@ -102,7 +109,7 @@ hi GitGutterChange guibg=bg guifg=orange
 
 
 "-- Custom Mappings ----------------------------------------------------------
-nnoremap <leader>h :call ToggleHighlightSearch()<CR>
+nnoremap <leader>h :set hlsearch!<CR>
 nnoremap <leader>l :call ToggleColorColumn()<CR>
 
 " Allow copy and paste in gvim
@@ -156,14 +163,6 @@ nnoremap <leader>b :Buffers<CR>
 
 
 "-- Functions ----------------------------------------------------------------
-function ToggleHighlightSearch()
-    if &hlsearch
-        set nohlsearch
-    else
-        set hlsearch
-    endif
-endfunction
-
 function ToggleColorColumn()
     if &colorcolumn
         set colorcolumn=0
