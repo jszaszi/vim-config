@@ -23,6 +23,7 @@ Plug 'garbas/vim-snipmate'
 " Utils
 Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 "-----------------------------------------------------------------------------
@@ -164,6 +165,11 @@ nnoremap <leader>b :Buffers<CR>
 
 "-- SnipMate -----------------------------------------------------------------
 let g:snipMate = { 'snippet_version' : 1 }
+"-----------------------------------------------------------------------------
+
+
+"-- Go-Vim -------------------------------------------------------------------
+let g:go_def_mapping_enabled = 0
 "-----------------------------------------------------------------------------
 
 
